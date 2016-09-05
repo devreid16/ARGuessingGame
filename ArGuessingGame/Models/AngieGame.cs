@@ -19,7 +19,7 @@ namespace ArGuessingGame.Models
         public string PlayerName { get; set; }
 
 
-        [Display(Name = "Enter Your Number")]
+        [Display(Name = "Enter Your Number (Between 1 and 50)")]
         [Required(ErrorMessage ="You Must Enter a Guess")]
         [Range(1, 50, ErrorMessage = "Number Must be between 1 and 50.")]
 

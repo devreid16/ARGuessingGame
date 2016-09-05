@@ -4,13 +4,26 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Guessing Game</h2>@*?? Negation operator*@
+<h2>Guessing Game</h2>
+    
+    @*?? Negation operator*@
 
 @if (!(ViewBag.Win ?? false))
 {
     if (ViewBag.Win != null && !ViewBag.Win)
     {
-        <h2>Sorry, @Model.PlayerName, @Model.Guess is incorrect!</h2>
+
+        if (@Model.Guess > (int)Session["Answer"])
+        {
+            <h2>Sorry, @Model.PlayerName, @Model.Guess is too high!</h2>
+        }
+        else
+        {
+            <h2>Sorry, @Model.PlayerName, @Model.Guess is too low!</h2>
+
+        }
+
+
     }
 
     using (Html.BeginForm())
